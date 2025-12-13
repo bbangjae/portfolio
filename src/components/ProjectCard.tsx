@@ -1,4 +1,4 @@
-import { Project } from "@/src/types/project";
+import { Project } from "@/types/project";
 
 interface ProjectCardProps {
   project: Project;
