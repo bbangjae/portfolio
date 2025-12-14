@@ -32,17 +32,14 @@ export const portfolioData: PortfolioData = {
     achievements: [
       {
         label: "Proactive",
-        href: "https://raw.githubusercontent.com/wnghdcjfe/wnghdcjfe.github.io/master/4percent.JPG",
         suffix: "주도적 해결",
       },
       {
         label: "Team-Driven",
-        href: "https://github.com/mochajs/mocha/graphs/contributors",
         suffix: "협업 중심",
       },
       {
         label: "Problem Solving",
-        href: "https://solved.ac/profile/zagabi",
         suffix: "근본 해결",
       },
     ],
