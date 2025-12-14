@@ -1,60 +1,104 @@
+"use client";
+
+import {motion} from "framer-motion";
+import {portfolioData} from "@/data/portfolio";
+
 export default function Hero() {
+  const {hero} = portfolioData;
+
   return (
       <section
-          id="home"
-          className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-16"
+          id="hero"
+          className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <p className="text-blue-600 font-semibold text-lg mb-4">
-              안녕하세요 👋
-            </p>
-
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-              Backend Develop
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              YoungJae
-            </span>
-              입니다
-            </h1>
-
-            <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              사용자 경험을 최우선으로 생각하며,
-              <br className="hidden sm:block" />
-              아름답고 효율적인 웹 애플리케이션을 만듭니다.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                  href="#projects"
-                  className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all hover:scale-105"
-              >
-                프로젝트 보기
-              </a>
-              <a
-                  href="#contact"
-                  className="px-8 py-4 bg-white text-gray-900 border-2 border-gray-300 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all"
-              >
-                연락하기
-              </a>
+        <div className="max-w-6xl w-full text-center space-y-8">
+          <motion.div
+              initial={{opacity: 0, y: 30}}
+              animate={{opacity: 1, y: 0}}
+              transition={{duration: 0.8}}
+          >
+            <div className="flex flex-col items-center justify-center mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight flex items-center gap-3">
+                {hero.intro.text}
+              </h1>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-600 dark:text-slate-300">
+                {hero.subtitle}
+                <span
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-[#2962FF] to-[#0039CB] inline-block ml-2">
+                {hero.intro.link?.label}
+              </span>
+                입니다.
+              </h2>
             </div>
 
-            <div className="mt-16 flex flex-wrap justify-center gap-4 text-gray-600">
-              <div className="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
-                Java
-              </div>
-              <div className="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
-                Spring
-              </div>
-              <div className="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
-                Spring Boot
-              </div>
-              <div className="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200">
-                JPA
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+              <a
+                  href="https://github.com/bbangjae"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-8 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium hover:opacity-90 transition-opacity"
+              >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                  <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                  <path d="M9 18c-4.51 2-5-2-7-2"/>
+                </svg>
+                GitHub
+              </a>
+
+              <a
+                  href="https://a-steady-byun.tistory.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-8 py-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white font-medium hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"
+              >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+                Tech Blog
+              </a>
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{delay: 0.5, duration: 0.8}}
+              className="flex justify-center gap-6 mt-12 flex-nowrap overflow-x-auto px-4"
+          >
+            {hero.achievements.map((item, idx) => (
+                <div
+                    key={idx}
+                    className="flex-shrink-0 inline-flex items-center px-6 py-3 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700 text-base text-slate-600 dark:text-slate-300"
+                >
+              <span className="font-bold text-[#2962FF] mr-2">
+                {item.label}
+              </span>
+                  <span>{item.suffix}</span>
+                </div>
+            ))}
+          </motion.div>
         </div>
       </section>
   );
